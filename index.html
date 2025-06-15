@@ -3,23 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mandiri Cell - Isi Pulsa & PPOB</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Mandiri Cell</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .active {
+      font-weight: bold;
+      color: #2563eb;
+    }
+  </style>
 </head>
-<body class="bg-[#00ABDC] text-gray-800 font-sans">
-  <header class="bg-yellow-400 text-black p-6 shadow-md text-center">
-    <h1 class="text-3xl font-bold">Mandiri Cell</h1>
-    <p>Solusi Bisnis Pulsa Terpercaya Sejak 2018</p>
-    <marquee>Mandiri Cell Server Pulsa All Operator | Aplikasi Galeri Pulsa | Sistem Downline Menguntungkan</marquee>
-  </header>
-  <main class="p-4">
-    <h2 class="text-xl font-semibold">Selamat Datang di Mandiri Cell</h2>
-    <p>Website ini adalah versi HTML statis dari landing page Mandiri Cell.</p>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-xl font-bold text-blue-600">Mandiri Cell</div>
+      <ul class="flex space-x-4">
+        <li><a href="#" onclick="navigate('Home')" class="nav-link">Home</a></li>
+        <li><a href="#" onclick="navigate('Server')" class="nav-link">Server</a></li>
+        <li><a href="#" onclick="navigate('Aplikasi')" class="nav-link">Aplikasi</a></li>
+        <li><a href="#" onclick="navigate('Tentang')" class="nav-link">Tentang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Narasi -->
+  <section class="bg-blue-100 py-4 px-6" id="narasi">
+    <p class="text-center text-blue-800 font-semibold" id="narasi-text">
+      Selamat datang di Mandiri Cell!
+    </p>
+  </section>
+
+  <!-- Konten -->
+  <main class="max-w-5xl mx-auto px-4 py-8" id="konten">
+    <h1 class="text-2xl font-bold mb-4">Home</h1>
+    <p>Selamat datang di Mandiri Cell, solusi modern untuk bisnis pulsa dan PPOB.</p>
   </main>
-  <footer class="bg-gray-900 text-white text-center py-4">
-    <p>&copy; 2025 Mandiri Cell. All rights reserved.</p>
-    <p>WhatsApp: 6281354506741</p>
-    <p>Telegram: @CSO_MandiriCell</p>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-10 py-6 text-center text-sm text-gray-500">
+    &copy; 2025 Mandiri Cell | WhatsApp: 081354506741
   </footer>
+
+  <!-- Script untuk navigasi dinamis -->
+  <script>
+    const narasiMap = {
+      Home: "Selamat datang di Mandiri Cell!",
+      Server: "Mandiri Cell adalah solusi terbaik untuk kamu yang ingin memulai bisnis digital dengan mudah, cepat, dan tanpa ribet. Sebagai server pulsa all operator, kami siap melayani Anda.",
+      Aplikasi: "Kami menyediakan aplikasi Galeri Pulsa modern untuk transaksi cepat, mudah, dan aman. Cukup satu aplikasi untuk semua kebutuhan digital Anda.",
+      Tentang: "Mandiri Cell hadir sebagai server pulsa, aplikasi PPOB, dan mitra terbaik Anda dalam menjalankan usaha digital. Sejak 2020, kami telah membantu ribuan agen memulai usaha dengan mudah. Dengan teknologi terbaru dan layanan pelanggan 24 jam, kami pastikan bisnis Anda selalu berjalan lancar."
+    };
+
+    const kontenMap = {
+      Home: `<h1 class="text-2xl font-bold mb-4">Home</h1><p>Selamat datang di Mandiri Cell, solusi modern untuk bisnis pulsa dan PPOB.</p>`,
+      Server: `<h1 class="text-2xl font-bold mb-4">Server</h1><p>Kami menyediakan layanan server pulsa All Operator, dengan koneksi stabil, respon cepat, dan harga bersaing.</p>`,
+      Aplikasi: `<h1 class="text-2xl font-bold mb-4">Aplikasi</h1><p>Aplikasi Galeri Pulsa memudahkan transaksi langsung dari smartphone. Tersedia untuk Android dengan fitur lengkap seperti pembelian pulsa, paket data, token PLN, dan pembayaran PPOB lainnya.</p>`,
+      Tentang: `<h1 class="text-2xl font-bold mb-4">Tentang Kami</h1><p>Mandiri Cell hadir sebagai server pulsa, aplikasi PPOB, dan mitra terbaik Anda dalam menjalankan usaha digital. Sejak 2020, kami telah membantu ribuan agen memulai usaha dengan mudah. Dengan teknologi terbaru dan layanan pelanggan 24 jam, kami pastikan bisnis Anda selalu berjalan lancar.</p>`
+    };
+
+    function navigate(page) {
+      document.getElementById('narasi-text').innerText = narasiMap[page];
+      document.getElementById('konten').innerHTML = kontenMap[page];
+      
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        if (link.innerText === page) link.classList.add('active');
+      });
+    }
+
+    // Set default halaman
+    navigate('Home');
+  </script>
 </body>
 </html>
