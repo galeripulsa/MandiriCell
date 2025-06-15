@@ -2,220 +2,120 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mandiri Cell</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://unpkg.com/feather-icons"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #00ABDC;
-      color: #333;
-    }
-    nav {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      margin: 5px;
-      padding: 10px 15px;
-      border-radius: 20px;
-      text-decoration: none;
-      border: 1px solid #ccc;
-      color: #333;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    nav a.active, nav a:hover {
-      background: #FFD600;
-      border-color: #FFD600;
-      color: black;
-    }
-    header {
-      background: #FFD600;
-      color: black;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .marquee {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    section {
-      padding: 40px 20px;
-      background: #f9f9f9;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .form-group input {
-      width: 100%;
-      padding: 10px 40px 10px 40px;
-      border-radius: 10px;
-      border: 2px solid #ccc;
-    }
-    .icon {
-      position: relative;
-    }
-    .icon i {
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-    }
-    button {
-      background: #FFD600;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
 </head>
-<body>
-
-  <nav id="navbar">
-    <div style="text-align: center; padding: 10px;">
-      <a href="#beranda" class="active">Beranda</a>
-      <a href="#server">Server</a>
-      <a href="#aplikasi">Aplikasi</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#pendaftaran">Pendaftaran</a>
-      <a href="#kontak">Kontak</a>
-    </div>
-  </nav>
-
-  <header>
-    <h1><i data-feather="zap"></i> Mandiri Cell</h1>
-    <p>Solusi Bisnis Pulsa Terpercaya Sejak 2018</p>
-    <marquee class="marquee">Mandiri Cell Server Pulsa All Operator | Aplikasi Galeri Pulsa | Sistem Downline Menguntungkan</marquee>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="flex flex-wrap justify-center p-4 space-x-2">
+      <button onclick="showPage('beranda')" class="tab px-4 py-2 rounded-full bg-yellow-400 text-black">Beranda</button>
+      <button onclick="showPage('tentang')" class="tab px-4 py-2 rounded-full bg-white">Tentang</button>
+      <button onclick="showPage('server')" class="tab px-4 py-2 rounded-full bg-white">Server</button>
+      <button onclick="showPage('aplikasi')" class="tab px-4 py-2 rounded-full bg-white">Aplikasi</button>
+      <button onclick="showPage('pendaftaran')" class="tab px-4 py-2 rounded-full bg-white">Pendaftaran</button>
+      <button onclick="showPage('kontak')" class="tab px-4 py-2 rounded-full bg-white">Kontak</button>
+    </nav>
   </header>
 
-  <section id="beranda">
-    <h2>Beranda</h2>
-    <p><strong>Selamat datang di Mandiri Cell!</strong></p>
-    <p>Temukan <strong>kemudahan</strong>, <strong>keuntungan</strong>, dan <strong>peluang usaha</strong> dalam satu aplikasi. Ayo bergabung sekarang juga!</p>
-  </section>
-
-  <section id="server">
-    <h2>Server</h2>
-    <p><strong>Server Mandiri Cell</strong> adalah solusi terbaik untuk kamu yang ingin memulai bisnis digital dengan mudah dan cepat. Kami menyediakan layanan pulsa, paket data, token listrik, PPOB (PDAM, BPJS, internet, dan lainnya).</p>
-    <p>Transaksi otomatis 24 jam melalui:</p>
-    <ul>
-      <li>✅ WhatsApp</li>
-      <li>✅ Telegram</li>
-      <li>✅ Aplikasi Galeri Pulsa</li>
-    </ul>
-    <p>Keunggulan:</p>
-    <ul>
-      <li>💰 Harga produk bersaing</li>
-      <li>📱 Transaksi mudah</li>
-      <li>📈 Tambah downline</li>
-      <li>🕛 Layanan 24 jam nonstop</li>
-      <li>🎁 Promo dan bonus</li>
-    </ul>
-    <p><em>Mulailah usaha mandiri kamu sekarang.</em></p>
-  </section>
-
-  <section id="aplikasi">
-    <h2>Aplikasi</h2>
-    <p><strong>Aplikasi Galeri Pulsa</strong> dari Mandiri Cell memberikan <strong>kemudahan</strong> dan <strong>kenyamanan</strong> bertransaksi.</p>
-    <ul>
-      <li>✔️ Interface sederhana</li>
-      <li>✔️ Transaksi real-time</li>
-      <li>✔️ Fitur downline</li>
-    </ul>
-  </section>
-
-  <section id="tentang">
-    <h2>Tentang</h2>
-    <p><strong>Mandiri Cell</strong> adalah mitra terpercaya dalam bisnis pulsa dan PPOB sejak tahun 2020. Kami hadir dengan server dan aplikasi yang stabil serta pelayanan terbaik untuk Anda.</p>
-    <p>Dengan komitmen tinggi, kami terus berkembang untuk mendukung kesuksesan mitra kami.</p>
-  </section>
-
-  <section id="pendaftaran">
-    <h2>Formulir Pendaftaran</h2>
-    <p>Isi formulir di bawah ini dan klik "Daftar Sekarang" untuk menghubungi kami via WhatsApp.</p>
-    <form onsubmit="sendWhatsApp(); return false;">
-      <div class="form-group icon">
-        <label>Nama Outlet</label>
-        <i data-feather="home"></i>
-        <input type="text" id="outlet" required>
+  <main class="p-6">
+    <!-- Beranda -->
+    <section id="beranda">
+      <h1 class="text-3xl font-bold mb-2">⚡ Mandiri Cell</h1>
+      <p class="mb-4 text-lg">Solusi Bisnis Pulsa Terpercaya Sejak 2018</p>
+      <p class="font-semibold">Pulsa All Operator | Aplikasi Galeri Pulsa | Sistem</p>
+      <div class="mt-6">
+        <h2 class="text-xl font-bold">Selamat datang di Mandiri Cell!</h2>
+        <p class="mt-2">Temukan <strong>kemudahan</strong>, <strong>keuntungan</strong>, dan <strong>peluang usaha</strong> dalam satu aplikasi. Ayo bergabung sekarang juga!</p>
       </div>
-      <div class="form-group icon">
-        <label>Nama Pemilik</label>
-        <i data-feather="user"></i>
-        <input type="text" id="pemilik" required>
-      </div>
-      <div class="form-group icon">
-        <label>Alamat Lengkap</label>
-        <i data-feather="map-pin"></i>
-        <input type="text" id="alamat" required>
-      </div>
-      <div class="form-group icon">
-        <label>Buat PIN Transaksi</label>
-        <i data-feather="lock"></i>
-        <input type="text" id="pin" required minlength="6">
-      </div>
-      <div class="form-group icon">
-        <label>Referral (Opsional)</label>
-        <i data-feather="gift"></i>
-        <input type="text" id="referral">
-      </div>
-      <button type="submit">Daftar Sekarang</button>
-    </form>
-  </section>
+    </section>
 
-  <section id="kontak">
-    <h2>Kontak</h2>
-    <p>WhatsApp: <a href="https://wa.me/6281354506741">6281354506741</a></p>
-    <p>Telegram: <a href="https://t.me/CSO_MandiriCell">@CSO_MandiriCell</a></p>
-  </section>
+    <!-- Tentang -->
+    <section id="tentang" class="hidden">
+      <h2 class="text-2xl font-bold">Tentang Kami</h2>
+      <p class="mt-2">Mandiri Cell adalah mitra terpercaya dalam bisnis pulsa dan PPOB sejak tahun 2018. Kami memberikan layanan terbaik untuk agen dan reseller di seluruh Indonesia.</p>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Mandiri Cell. All rights reserved.</p>
-    <p>Powered by Galeri Pulsa</p>
-  </footer>
+    <!-- Server -->
+    <section id="server" class="hidden">
+      <h2 class="text-2xl font-bold">Server</h2>
+      <p class="mt-2"><strong>Server Mandiri Cell</strong> adalah solusi terbaik untuk kamu yang ingin memulai bisnis digital dengan mudah dan cepat. Kami menyediakan layanan pulsa, paket data, token listrik, PPOB (PDAM, BPJS, internet, dan lainnya).</p>
+      <p class="mt-2">Transaksi otomatis 24 jam melalui:</p>
+      <ul class="list-disc pl-5 mt-2">
+        <li>✅ WhatsApp</li>
+        <li>✅ Telegram</li>
+      </ul>
+    </section>
+
+    <!-- Aplikasi -->
+    <section id="aplikasi" class="hidden">
+      <h2 class="text-2xl font-bold">Aplikasi Galeri Pulsa</h2>
+      <p class="mt-2">Gunakan aplikasi Galeri Pulsa untuk transaksi yang cepat, aman, dan efisien. Aplikasi tersedia di Android dan dapat digunakan oleh semua kalangan.</p>
+    </section>
+
+    <!-- Pendaftaran -->
+    <section id="pendaftaran" class="hidden">
+      <h2 class="text-2xl font-bold mb-4">Formulir Pendaftaran</h2>
+      <form class="space-y-4">
+        <div>
+          <label class="block font-medium">Nama Outlet</label>
+          <div class="flex items-center border px-3 py-2 rounded bg-white">
+            <i data-feather="home" class="mr-2"></i>
+            <input type="text" class="w-full outline-none" placeholder="Masukkan nama outlet" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium">Nama Pemilik</label>
+          <div class="flex items-center border px-3 py-2 rounded bg-white">
+            <i data-feather="user" class="mr-2"></i>
+            <input type="text" class="w-full outline-none" placeholder="Masukkan nama pemilik" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium">Alamat Lengkap</label>
+          <div class="flex items-center border px-3 py-2 rounded bg-white">
+            <i data-feather="map-pin" class="mr-2"></i>
+            <input type="text" class="w-full outline-none" placeholder="Masukkan alamat lengkap" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium">PIN Transaksi</label>
+          <div class="flex items-center border px-3 py-2 rounded bg-white">
+            <i data-feather="lock" class="mr-2"></i>
+            <input type="password" class="w-full outline-none" placeholder="4 digit angka" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium">Kode Referral (opsional)</label>
+          <div class="flex items-center border px-3 py-2 rounded bg-white">
+            <i data-feather="gift" class="mr-2"></i>
+            <input type="text" class="w-full outline-none" placeholder="Kode referral" />
+          </div>
+        </div>
+        <button class="mt-4 px-4 py-2 bg-yellow-400 text-black rounded font-bold">Daftar Sekarang</button>
+      </form>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="hidden">
+      <h2 class="text-2xl font-bold">Hubungi Kami</h2>
+      <p class="mt-2">WhatsApp: <a href="https://wa.me/6282188890720" class="text-blue-600 underline">+62 821-8889-0720</a></p>
+    </section>
+  </main>
 
   <script>
-    feather.replace();
+    function showPage(page) {
+      const sections = document.querySelectorAll("main section");
+      sections.forEach((section) => section.classList.add("hidden"));
+      document.getElementById(page).classList.remove("hidden");
 
-    function sendWhatsApp() {
-      const outlet = document.getElementById('outlet').value;
-      const pemilik = document.getElementById('pemilik').value;
-      const alamat = document.getElementById('alamat').value;
-      const pin = document.getElementById('pin').value;
-      const referral = document.getElementById('referral').value;
-      const pesan = `DAFTAR#${outlet}#${pemilik}#${alamat}#${pin}#${referral}`;
-      const link = `https://wa.me/6281354506741?text=${encodeURIComponent(pesan)}`;
-      window.open(link, '_blank');
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach((tab) => tab.classList.remove("bg-yellow-400", "text-black"));
+      event.target.classList.add("bg-yellow-400", "text-black");
     }
 
-    // Highlight menu
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
+    feather.replace();
   </script>
 </body>
 </html>
